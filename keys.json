@@ -1,0 +1,7 @@
+{
+    "discord_keys":{
+        "email": "YOUR_DISCORD_EMAIL",
+        "password": "YOUR_DISCORD_PASSWORD",
+        "auth_token": "FIRST_TOKEN_GET_FROM_NETWORK this can be empty" 
+    }
+}
