@@ -48,7 +48,7 @@ def start(channelId, channel_msg):
     
     email= input_data["discord_keys"]["email"]
     password = input_data["discord_keys"]["password"]
-    res_status = 400
+    res_status = 200
     
     discord_data = {
         'content': channel_msg,
