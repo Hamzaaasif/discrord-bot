@@ -3,6 +3,7 @@ from loguru import logger
 import datetime
 from google_sheet_script import read_google_sheet
 from flask import Flask
+from timeZone import get_hour
 
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ def schedule_job():
 if __name__ == "__main__":
     logger.info("Starting the scheduler")
     scheduler = BlockingScheduler()
-    scheduler.add_job(schedule_job, 'cron', hour=12)
+    scheduler.add_job(schedule_job, 'cron', hour=get_hour())
     scheduler.start()
     logger.info("Starting the flask server")
     app.run(host='0.0.0.0', port=8080)

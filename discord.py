@@ -55,11 +55,11 @@ def start(channelId, channel_msg):
         'token': input_data["discord_keys"]["auth_token"]
     }
     
-    if(res_status is not 200):
+    if(res_status != 200):
         discord_data['token'] = login(email, password)
         
     res_status = sendMessageToChannel(channelId,discord_data['content'],discord_data['token'])
-    if(res_status is not 200):
+    if(res_status != 200):
         logger.error("login Failed.")
         discord_data['token'] = login(email, password)
         logger.info("Attempting to send message again ..")
